@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script");
+::-webkit-scrollbar {
+  display: none; }
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 100% sans-serif;
+  height: 100%;
+  background: black;
+  overflow-y: hidden;
+  -webkit-animation: 1s loadIn;
+  animation: 1s loadIn; }
+
+.navbar {
+  max-width: 1920px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: black;
+  color: #ffe600;
+  -webkit-filter: drop-shadow(5px 5px 4px black);
+  filter: drop-shadow(5px 5px 4px black); }
+  @media screen and (max-width: 800px) {
+    .navbar {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
+  .navbar h1, .navbar h3 {
+    margin-left: 1em;
+    font-family: 'Oleo Script', cursive; }
+  .navbar .navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-right: 15px; }
+    @media screen and (max-width: 800px) {
+      .navbar .navigation {
+        display: none; } }
+
+.wrapper {
+  margin: 0 auto;
+  height: 100vh;
+  width: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 2px;
+  perspective: 2px; }
+
+.section {
+  position: relative;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: white; }
+  .section p {
+    padding-top: 25px;
+    line-height: 2; }
+  .section h1 {
+    font-size: 1.8em;
+    padding: 25px;
+    background: rgba(17, 17, 17, 0.897);
+    font-family: 'Oleo Script', cursive; }
+  .section .cta {
+    width: 75%;
+    border: 1px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .section .cta .arrow {
+      padding-top: 20px; }
+    .section .cta .small {
+      font-family: 'Oleo Script', cursive;
+      display: none;
+      background: rgba(17, 17, 17, 0.897);
+      padding: 20px; }
+    @media screen and (max-width: 800px) {
+      .section .cta .large {
+        display: none; }
+      .section .cta .small {
+        display: inline-block; } }
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  -webkit-transform: translateZ(-1px) scale(1.5);
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */
+  z-index: -1; }
+
+/* The styling for the static div. */
+.static {
+  background: rgba(83, 83, 83, 0.973);
+  height: 900px; }
+  .static .container {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .static .container .tiles {
+      border-top: 1px solid rgba(17, 17, 17, 0.39);
+      padding-top: 50px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      @media screen and (max-width: 1500px) {
+        .static .container .tiles {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          padding: 0px;
+          margin-top: 0px; }
+          .static .container .tiles .tile3 {
+            display: none; } }
+      .static .container .tiles .tile {
+        background-color: rgba(17, 17, 17, 0.897);
+        margin: 25px;
+        padding: 50px; }
+        @media screen and (max-width: 1500px) {
+          .static .container .tiles .tile {
+            margin: 0px;
+            padding: 25px; } }
+        .static .container .tiles .tile h1 {
+          color: #ffe600; }
+        .static .container .tiles .tile p {
+          padding-top: 25px;
+          line-height: 2; }
+          @media screen and (max-width: 1500px) {
+            .static .container .tiles .tile p {
+              padding-top: 0px; } }
+    .static .container .first {
+      color: white;
+      width: 100%;
+      padding-left: 25px;
+      margin-right: 5px;
+      -webkit-animation: 1s ease-out 0s 1 slideInFromLeft;
+      animation: 1s ease-out 0s 1 slideInFromLeft; }
+      @media screen and (max-width: 800px) {
+        .static .container .first {
+          margin: 0;
+          padding: 0;
+          border-top: 1px solid rgba(17, 17, 17, 0.39); } }
+      @media screen and (max-width: 1500px) {
+        .static .container .first .no-mobile {
+          display: none; } }
+      .static .container .first h1 {
+        color: #ffe600;
+        margin-top: 100px;
+        width: 25%;
+        padding: 25px;
+        background: rgba(17, 17, 17, 0.897); }
+        @media screen and (max-width: 1500px) {
+          .static .container .first h1 {
+            margin-top: 0px; } }
+        @media screen and (max-width: 800px) {
+          .static .container .first h1 {
+            width: 100%;
+            width: 80%;
+            padding: 10px; } }
+      .static .container .first p {
+        margin-top: 50px;
+        width: 80%;
+        padding: 25px;
+        background: rgba(17, 17, 17, 0.897); }
+        @media screen and (max-width: 800px) {
+          .static .container .first p {
+            width: 80%;
+            padding: 10; } }
+    .static .container .second {
+      border-top: 1px solid rgba(17, 17, 17, 0.39);
+      margin-top: 100px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      color: white;
+      width: 100%;
+      padding-left: 25px;
+      margin-right: 5px;
+      -webkit-animation: 1s ease-out 0s 1 slideInFromRight;
+      animation: 1s ease-out 0s 1 slideInFromRight; }
+      @media screen and (max-width: 1500px) {
+        .static .container .second {
+          padding-right: 25px; } }
+      @media screen and (max-width: 800px) {
+        .static .container .second {
+          padding-right: 25px; } }
+      .static .container .second h1 {
+        color: #ffe600;
+        margin-top: 100px;
+        width: 25%;
+        padding: 25px;
+        background: rgba(17, 17, 17, 0.897); }
+        @media screen and (max-width: 1500px) {
+          .static .container .second h1 {
+            margin-top: 15px;
+            width: 80%;
+            padding: 10px; } }
+        @media screen and (max-width: 800px) {
+          .static .container .second h1 {
+            margin-top: 0px;
+            width: 80%;
+            padding: 10px; } }
+      .static .container .second p {
+        margin-top: 50px;
+        width: 80%;
+        padding: 25px;
+        background: rgba(17, 17, 17, 0.897); }
+        @media screen and (max-width: 800px) {
+          .static .container .second p {
+            width: 80%;
+            padding: 10;
+            border-top: 1px solid rgba(17, 17, 17, 0.39); } }
+
+/* Sets the actual background images to adorable kitties. This part is crucial. */
+.bg1::after {
+  background-image: url(../images/drinks.jpg);
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat; }
+
+.bg2::after {
+  background-image: url(../images/barrel-beer-beer-barrel-33686.jpg);
+  background-repeat: no-repeat; }
+
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes slideInFromLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; } }
+
+@-webkit-keyframes slideInFromRight {
+  0% {
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes slideInFromRight {
+  0% {
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; } }
+
+@-webkit-keyframes loadIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes loadIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

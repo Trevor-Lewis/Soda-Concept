@@ -1,0 +1,364 @@
+$bg-color: rgb(0, 0, 0);
+$div-color: rgb(255, 255, 255);
+$text-color: rgb(255, 255, 255);
+$border-color: rgba(17, 17, 17, 0.897);
+$title-color: #fff;
+$nav-text-color: rgb(255, 230, 0);
+$container-bg: rgba(83, 83, 83, 0.973);
+$break-large: 1500px;
+$break-med: 800px;
+$break-sm: 500px;
+$font-stack: sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font: 100% $font-stack;
+    height: 100%;
+    background: $bg-color;
+    overflow-y: hidden;
+    animation: 1s loadIn;
+}
+
+
+.navbar  {
+    max-width: 1920px;
+    // z-index: 2;
+    // position: fixed;
+    // width: 99%;
+    // height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $bg-color;
+    color: $nav-text-color;
+    filter: drop-shadow(5px 5px 4px rgb(0, 0, 0));
+    @media screen and (max-width: $break-med) {
+        justify-content: center;
+     }
+
+    h1, h3 {
+        margin-left: 1em;
+        font-family: 'Oleo Script', cursive;
+    }
+
+    .navigation{
+        // width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        margin-right: 15px;
+
+        @media screen and (max-width: $break-med) {
+           display: none;
+        }
+       
+    }
+    
+
+}
+.wrapper {
+    margin: 0 auto;
+    height: 100vh;
+    width: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+  }
+  
+  .section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+        p {
+            padding-top: 25px;
+            line-height: 2;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            padding: 25px;
+            background: $border-color;
+            font-family: 'Oleo Script', cursive;
+
+        }
+        .cta {
+            width: 75%;
+            border: 1px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .arrow {
+                padding-top: 20px;
+            }
+
+            .small {
+                font-family: 'Oleo Script', cursive;
+                display: none;
+                background: $border-color;
+                padding: 20px;
+            }
+
+            @media screen and (max-width: $break-med) {
+                .large{
+                    display: none;
+                }
+
+                .small {
+                    display: inline-block;
+                }
+            }
+
+        }
+  }
+  
+  .parallax::after {
+    /* Display and position the pseudo-element */
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    /* Move the pseudo-element back away from the camera,
+     * then scale it back up to fill the viewport.
+     * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    transform: translateZ(-1px) scale(1.5);
+    /* Force the background image to fill the whole element. */
+    background-size: 100%;
+    /* Keep the image from overlapping sibling elements. */ 
+    z-index: -1;
+  }
+  
+  /* The styling for the static div. */
+  .static {
+    background: $container-bg;
+    height: 900px;
+  
+
+        .container {
+            // height: 100%;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            // border: 1px solid $border-color;
+            @media screen and (max-width: $break-med) {
+                // flex-direction: row;
+            }
+
+            .tiles {
+                border-top: 1px solid rgba(17, 17, 17, 0.39);
+                padding-top: 50px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                @media screen and (max-width: $break-large) {
+                    flex-direction: column;
+                    padding: 0px;
+                    margin-top: 0px;
+
+                    .tile3{
+                        display: none;
+                    }
+                }
+
+                .tile {
+                    background-color: $border-color;
+                    margin: 25px;
+                    padding: 50px;
+                    @media screen and (max-width: $break-large) {
+                        margin: 0px;
+                        padding: 25px;
+                    }
+
+                    
+
+                    h1 {
+                        color: $nav-text-color;
+                    }
+
+                    p {
+                        padding-top: 25px;
+                        line-height: 2;
+                        @media screen and (max-width: $break-large) {
+                            padding-top: 0px;
+                        }
+                    }
+                }
+            }
+
+            .first {
+                // background: $border-color;
+                color: $text-color;
+                width: 100%;
+                padding-left: 25px;
+                margin-right: 5px;
+                animation: 1s ease-out 0s 1 slideInFromLeft;
+                @media screen and (max-width: $break-med) {
+                    margin: 0;
+                    padding: 0;
+                    border-top: 1px solid rgba(17, 17, 17, 0.39);
+
+                }
+
+                @media screen and (max-width: $break-large) {
+                    .no-mobile {
+                        display: none;
+                    }
+                }
+
+                h1 {
+                    color: $nav-text-color;
+                    margin-top: 100px;
+                    width: 25%;
+                    padding: 25px;
+                    background: $border-color;
+                    @media screen and (max-width: $break-large) {
+                        margin-top: 0px;
+                        
+                    }
+                    @media screen and (max-width: $break-med) {
+                        width: 100%;
+                        width: 80%;
+                        padding: 10px;
+                        
+                    }
+                   
+                }
+                p {
+                    margin-top: 50px;
+                    width: 80%;
+                    padding: 25px;
+                    background: $border-color;
+                    @media screen and (max-width: $break-large) {
+                        // margin-top: 0px;
+                    }
+                    @media screen and (max-width: $break-med) {
+                        width: 80%;
+                        padding: 10;
+                    }
+                }
+            }
+
+            .second {
+                border-top: 1px solid rgba(17, 17, 17, 0.39);
+                margin-top: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-direction: column;
+                // background: $border-color;
+                color: $text-color;
+                width: 100%;
+                padding-left: 25px;
+                margin-right: 5px;
+                animation: 1s ease-out 0s 1 slideInFromRight;
+                @media screen and (max-width: $break-large) {
+                    // margin-top: 100px;
+                    // border-top: none;
+                    padding-right: 25px;
+                }
+                @media screen and (max-width: $break-med) {
+                    padding-right: 25px;
+                }
+                
+
+                h1 {
+                    color: $nav-text-color;
+                    margin-top: 100px;
+                    width: 25%;
+                    padding: 25px;
+                    background: $border-color;
+                    @media screen and (max-width: $break-large) {
+                        margin-top: 15px;
+                        width: 80%;
+                        padding: 10px;
+                    }
+                    @media screen and (max-width: $break-med) {
+                        margin-top: 0px;
+                        width: 80%;
+                        padding: 10px;
+                    }
+                }
+                p {
+                    margin-top: 50px;
+                    width: 80%;
+                    padding: 25px;
+                    background: $border-color;
+                    @media screen and (max-width: $break-med) {
+                        width: 80%;
+                        padding: 10;
+                        border-top: 1px solid rgba(17, 17, 17, 0.39);
+                    }
+                }
+            }
+        }
+  }
+  
+  /* Sets the actual background images to adorable kitties. This part is crucial. */
+  .bg1::after {
+    background-image: url(../images/drinks.jpg);
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+  }
+  
+  .bg2::after {
+    background-image: url(../images/barrel-beer-beer-barrel-33686.jpg);
+    background-repeat: no-repeat;
+  }
+
+
+//   Animations
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(200%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes loadIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+//   Media Queries
